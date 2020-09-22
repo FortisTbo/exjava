@@ -8,9 +8,7 @@ public class ExB4 {
 		
 		System.out.println ("Please enter your language ?");
 		String language = scanner.nextLine();
-		
-
-		String str = "two"; 
+	
         switch(language) 
         { 
             case "FR": 
