@@ -2,19 +2,16 @@ import java.util.*;
 
 public class ExC1 {
 	
-	public static String 	title;
-	public static int 		numberOfDays;
-	public static double 	pricePerDay;
-	public static boolean 	priorKnowledgeRequired;
+
 		
 	public static void main (String [] args) {
 			
-		title = args[0];
-		numberOfDays = Integer.parseInt(args[1]);
-		pricePerDay = Double.parseDouble(args[2]);
-		priorKnowledgeRequired = Boolean.parseBoolean(args[3]);
+		String title = args[0];
+		int numberOfDays = Integer.parseInt(args[1]);
+		double pricePerDay = Double.parseDouble(args[2]);
+		boolean priorKnowledgeRequired = Boolean.parseBoolean(args[3]);
 		
-		printInfo ();
+		printInfo (title, numberOfDays, pricePerDay, priorKnowledgeRequired);
 		
 		double price = pricePerDay * numberOfDays;
 		double vat21;
@@ -35,7 +32,7 @@ public class ExC1 {
 		System.out.println ("Total price of the course=" + totalPrice + " --> " + label);
 	 }
 	 
-	 public static void printInfo () {
+	 public static void printInfo (String title, int numberOfDays, double pricePerDay, boolean priorKnowledgeRequired) {
 		 System.out.println ("Title=" + title + 
 								" / Number of days=" + numberOfDays + 
 								" / Price per day=" + pricePerDay +
