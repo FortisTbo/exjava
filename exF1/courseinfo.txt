@@ -1,0 +1,1 @@
+Title=Java / Number of days=15 / Price per day=150.0 / Prior knowledge is required=true Total price of the course=2250.0 --> EXPENSIVE
