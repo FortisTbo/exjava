@@ -1,31 +1,26 @@
 import java.util.*;
 
 public class ExC2 {
-	
-	public static String 	title;
-	public static int 		numberOfDays;
-	public static double 	pricePerDay;
-	public static boolean 	priorKnowledgeRequired;
 		
 	public static void main (String [] args) {
 			
-		title = args[0];
-		numberOfDays = Integer.parseInt(args[1]);
-		pricePerDay = Double.parseDouble(args[2]);
-		priorKnowledgeRequired = Boolean.parseBoolean(args[3]);
+		String title = args[0];
+		int numberOfDays = Integer.parseInt(args[1]);
+		double pricePerDay = Double.parseDouble(args[2]);
+		boolean priorKnowledgeRequired = Boolean.parseBoolean(args[3]);
 		
-		printInfo ();
+		printInfo (title, numberOfDays, pricePerDay, priorKnowledgeRequired);
 	
 	}
 	 
-	public static void printInfo () {
+	public static void printInfo (String title, int numberOfDays, double pricePerDay, boolean priorKnowledgeRequired) {
 		 System.out.println ("Title=" + title + 
 								" / Number of days=" + numberOfDays + 
 								" / Price per day=" + pricePerDay +
 								" / Prior knowledge is required=" + priorKnowledgeRequired);
 								
 		String label = "OK";
-		double totalPrice = totalPriceCalculation();
+		double totalPrice = totalPriceCalculation(numberOfDays, pricePerDay, priorKnowledgeRequired);
 		if  (totalPrice < 500.0) {
 			label = "CHEAP";
 		} else if (totalPrice > 1500.0) {
@@ -35,7 +30,7 @@ public class ExC2 {
 		System.out.println ("Total price of the course=" + totalPrice + " --> " + label);
 	}
 	 
-	public static double totalPriceCalculation () {
+	public static double totalPriceCalculation (int numberOfDays, double pricePerDay, boolean priorKnowledgeRequired) {
 		double price = pricePerDay * numberOfDays;
 		double vat21;
 		if  (numberOfDays > 3 && priorKnowledgeRequired) {
