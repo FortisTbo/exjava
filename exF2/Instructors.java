@@ -1,28 +1,30 @@
 import java.util.ArrayList;
 
 public class Instructors {
-	private ArrayList<String> instructors = new ArrayList<String> ();
+	private ArrayList<Instructor> instructors = new ArrayList<Instructor> ();
 
 	public Instructors() {
 		
 	}
 
 
-	public ArrayList<String> getInstructors() {
+
+	public ArrayList<Instructor> getInstructors() {
 		return instructors;
 	}
 
-	public void setInstructors(ArrayList<String> instructors) {
+	public void setInstructors(ArrayList<Instructor> instructors) {
 		this.instructors = instructors;
 	}
 	
-	public void addInstructor (String instructorName) {
-		this.instructors.add(instructorName);
+	public void addInstructor (Instructor instructor) {
+		this.instructors.add(instructor);
 	}
 	
 	public void printInstructors () {
 		for (int i=0; i <instructors.size();i++ ) {
-			System.out.println(this.instructors.get(i));
+			Instructor instructor = this.instructors.get(i);
+			System.out.println(instructor.getFirstName() + " " + instructor.getLastName() + " " + instructor.getAge());
 		}
 	}
 }
